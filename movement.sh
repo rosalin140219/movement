@@ -1,6 +1,9 @@
 #!/bin/bash
 
 function install() {
+	sudo apt-get update
+	sudo apt-get install clang cmake build-essential
+	sudo apt-get install screen
 	# 检查 go 是否已安装
     if ! command -v go &> /dev/null
     then
