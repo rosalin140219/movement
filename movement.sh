@@ -12,10 +12,12 @@ function install() {
             # Add /usr/local/go/bin to the PATH environment variable by adding the following line to your ~/.profile.
             export PATH=$PATH:/usr/local/go/bin
     fi
+
 	bash <(curl -fsSL https://raw.githubusercontent.com/movemntdev/M1/main/scripts/install.sh) --latest
-	source .bashrc
-	movement manage install m1 testnet
-	screen -dmS Movement bash -c 'movement ctl start m1 testnet'
+
+	/root/.movement/bin/movement manage install m1 testnet
+
+	screen -dmS Movement bash -c '/root/.movement/bin/movement ctl start m1 testnet'
 }
 
 # 查看常规版本节点日志
